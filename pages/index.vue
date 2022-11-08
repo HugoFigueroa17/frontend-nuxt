@@ -27,11 +27,11 @@
                 <tr>
                   <td v-if="users.length === 0"  colspan="4" class="text-center">No hay datos disponibles</td>
                 </tr>
-                <tr v-for="(m,i) in users" v-bind:key="i">
+                <tr v-for="({fullname, email, phone},i) in users" v-bind:key="i">
                   <td>{{i+1}}</td>
-                  <td>{{m.fullname}}</td>
-                  <td>{{m.email}}</td>
-                  <td>{{m.phone}}</td>
+                  <td>{{fullname}}</td>
+                  <td>{{email}}</td>
+                  <td>{{phone}}</td>
                 </tr>
                </thead> 
 
@@ -45,7 +45,8 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from 'vue';
+
 
 export default Vue.extend({
   name: 'IndexPage',
